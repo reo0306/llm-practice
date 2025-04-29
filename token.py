@@ -23,3 +23,7 @@ for i, item in enumerate(vocab.items()):
     print(item)
     if i >= 50:
         break
+
+all_tokens = sorted(list(preprocessed))
+all_tokens.extend(["<|endoftext|", "<|unk|>"])
+vocab = {token:integer for integer,token in enumerate(all_tokens)}
