@@ -1,4 +1,4 @@
-FROM arm64v8/python:3.13
+FROM arm64v8/python:3.11
 
 RUN apt-get update
 RUN apt-get install -y sudo locales apt-utils tzdata init systemd
@@ -9,11 +9,11 @@ ENV TIMEZONE=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
     && echo $TIMEZONE > /etc/timezone 
 
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL_ja_JP.UTF-8
-ENV TZ JST-9
-ENV TERM xterm
+#ENV LANG ja_JP.UTF-8
+#ENV LANGUAGE ja_JP:ja
+#ENV LC_ALL_ja_JP.UTF-8
+#ENV TZ JST-9
+#ENV TERM xterm
 
 RUN pip3 install --upgrade setuptools
 
