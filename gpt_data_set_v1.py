@@ -41,12 +41,15 @@ dataloader = create_dataloader_v1(
     raw_text,
     batch_size=1,
     max_length=4,
-    stride=1,
+    stride=4,
     shuffle=False
 )
 data_iter = iter(dataloader)
 first_batch = next(data_iter)
 print(first_batch)
+#inputs, targets = next(data_iter)
+#print("Inputs:\n", inputs)
+#print("\nTargets:\n", targets)
 
-second_batch = next(data_iter)
-print(second_batch)
+#second_batch = next(data_iter)
+#print(second_batch)
